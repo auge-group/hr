@@ -2,17 +2,16 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AUGE HR</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#fff;--bg2:#f5f5f4;--bg3:#efefed;--bgd:#fcebeb;--bgw:#faeeda;--bgi:#e6f1fb;--tx:#1a1a18;--tx2:#5f5e5a;--tx3:#888780;--txd:#a32d2d;--txw:#854f0b;--txi:#185fa5;--bd:rgba(0,0,0,.12);--bd2:rgba(0,0,0,.22);--r:8px;--rl:12px;--f:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+:root{--bg:#fff;--bg2:#f5f5f4;--bg3:#efefed;--bgd:#fcebeb;--bgw:#faeeda;--bgi:#e6f1fb;--tx:#1a1a18;--tx2:#5f5e5a;--tx3:#888780;--txd:#a32d2d;--txw:#854f0b;--txi:#185fa5;--bd:rgba(0,0,0,.12);--bd2:rgba(0,0,0,.22);--r:8px;--rl:12px;--f:-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif}
 @media(prefers-color-scheme:dark){:root{--bg:#1c1c1a;--bg2:#252523;--bg3:#2e2e2b;--bgd:#2a1414;--bgw:#261a08;--bgi:#0d1e30;--tx:#f0ede8;--tx2:#b4b2a9;--tx3:#888780;--txd:#f09595;--txw:#fac775;--txi:#85b7eb;--bd:rgba(255,255,255,.1);--bd2:rgba(255,255,255,.18)}}
 body{font-family:var(--f);color:var(--tx);background:var(--bg3);min-height:100vh;padding:1rem 1.5rem}
 .app{max-width:1300px;margin:0 auto}
 .hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:.5px solid var(--bd)}
-h1{font-size:15px;font-weight:500}
-.upd{font-size:11px;color:var(--tx3)}
+h1{font-size:15px;font-weight:500}.upd{font-size:11px;color:var(--tx3)}
 .tabs{display:flex;gap:4px;border-bottom:.5px solid var(--bd);margin-bottom:1rem}
 .tab{padding:6px 14px;font-size:12px;cursor:pointer;border:none;background:none;color:var(--tx2);border-bottom:2px solid transparent;margin-bottom:-1px}
 .tab.on{color:var(--tx);border-bottom:2px solid var(--tx);font-weight:500}
@@ -33,10 +32,10 @@ tr:last-child td{border-bottom:none}
 tr.ex td{opacity:.42}
 tr:hover td{background:var(--bg2)}
 .badge{display:inline-block;padding:1px 6px;border-radius:20px;font-size:10px;font-weight:500}
-.bd_{background:#E6F1FB;color:#0C447C}.ba{background:#EAF3DE;color:#27500A}.bc{background:#EEEDFE;color:#3C3489}.bs{background:#FAEEDA;color:#633806}.bf{background:#E1F5EE;color:#085041}.be{background:#F1EFE8;color:#5F5E5A}
+.bdip{background:#E6F1FB;color:#0C447C}.bapp{background:#EAF3DE;color:#27500A}.bcol{background:#EEEDFE;color:#3C3489}.bsta{background:#FAEEDA;color:#633806}.bfre{background:#E1F5EE;color:#085041}.bex{background:#F1EFE8;color:#5F5E5A}
 .flag{display:inline-block;padding:1px 4px;border-radius:3px;font-size:9px;background:var(--bgw);color:var(--txw);margin-left:3px}
 .soc{display:inline-block;padding:1px 5px;border-radius:4px;font-size:10px;font-weight:500}
-.ss{background:#EEEDFE;color:#3C3489}.sd_{background:#E6F1FB;color:#0C447C}.sc_{background:#FAEEDA;color:#633806}.se{background:#EAF3DE;color:#085041}
+.sstr{background:#EEEDFE;color:#3C3489}.sdes{background:#E6F1FB;color:#0C447C}.scom{background:#FAEEDA;color:#633806}.sexp{background:#EAF3DE;color:#085041}
 .scr{color:#A32D2D;font-weight:500}.sca{color:#854F0B;font-weight:500}
 .sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem;flex-wrap:wrap;gap:6px}
 .st{font-size:13px;font-weight:500}
@@ -68,10 +67,10 @@ input[type=search]{width:100%;padding:6px 9px;font-size:11px;border:.5px solid v
 <div id="root"></div>
 </div>
 <script>
-const SK='auge-hr-v3';
-const SOCS=['AUGE Strategy','AUGE Design','AUGE Communication','AUGE Experience'];
-const TIPI=['Dipendente','Apprendista','Collaboratore co.co.co','Stagista/Borsista','Freelance / P.IVA'];
-const RAW=[
+var SK='auge-hr-v3';
+var SOCS=['AUGE Strategy','AUGE Design','AUGE Communication','AUGE Experience'];
+var TIPI=['Dipendente','Apprendista','Collaboratore co.co.co','Stagista/Borsista','Freelance / P.IVA'];
+var RAW=[
 {id:'d1',sede:'Milano',societa:'AUGE Communication',cognome:'Avaltroni',nome:'Elena',ruolo:'Copywriter',seniority:'Mid',attivo:true,tipo:'Dipendente',assunzione:'2023-01-01',scadenza:'2029-01-01',lorda_mese:2571,contrib_ditta_mese:246,tfr_mese:178,ticket_mese:160,netto_mese:1982},
 {id:'d2',sede:'Milano',societa:'AUGE Communication',cognome:'Berti',nome:'Caterina',ruolo:'Copywriter',seniority:'Senior',attivo:true,tipo:'Dipendente',assunzione:'2024-05-02',scadenza:'2027-06-01',lorda_mese:2912,contrib_ditta_mese:279,tfr_mese:201,ticket_mese:160,netto_mese:2045},
 {id:'d3',sede:'Milano',societa:'AUGE Communication',cognome:'Borrelli',nome:'Alessandro',ruolo:'Art director',seniority:'Senior',attivo:true,tipo:'Dipendente',assunzione:'2023-02-22',scadenza:'2029-03-01',lorda_mese:2784,contrib_ditta_mese:266,tfr_mese:192,ticket_mese:160,netto_mese:2007},
@@ -84,7 +83,7 @@ const RAW=[
 {id:'d10',sede:'Milano',societa:'AUGE Communication',cognome:'Panetta',nome:'Barbara',ruolo:'Art director',seniority:'Intern',attivo:true,tipo:'Stagista/Borsista',assunzione:'2026-04-10',lorda_mese:0,contrib_ditta_mese:0,tfr_mese:0,ticket_mese:160,netto_mese:0,flag:true,note:'Dati da completare'},
 {id:'d11',sede:'Milano',societa:'AUGE Communication',cognome:'Piro',nome:'Ludovica',ruolo:'Copywriter',seniority:'Mid',attivo:true,tipo:'Dipendente',assunzione:'2026-04-10',lorda_mese:0,contrib_ditta_mese:0,tfr_mese:0,ticket_mese:160,netto_mese:0,flag:true,note:'Dati da completare'},
 {id:'d12',sede:'Milano',societa:'AUGE Communication',cognome:'Montorsi',nome:'Anna',ruolo:'Art director',seniority:'Mid',attivo:true,tipo:'Dipendente',assunzione:'2026-04-10',lorda_mese:0,contrib_ditta_mese:0,tfr_mese:0,ticket_mese:160,netto_mese:0,flag:true,note:'Dati da completare'},
-{id:'d13',sede:'Milano',societa:'AUGE Communication',cognome:'Ariagno',nome:'Federica',ruolo:'Partner',seniority:'C-Level',attivo:true,tipo:'Collaboratore co.co.co',assunzione:'2019-05-01',lorda_mese:10210,contrib_ditta_mese:1320,tfr_mese:0,ticket_mese:0,netto_mese:5000,flag:true,note:'Partner — da completare'},
+{id:'d13',sede:'Milano',societa:'AUGE Communication',cognome:'Ariagno',nome:'Federica',ruolo:'Partner',seniority:'C-Level',attivo:true,tipo:'Collaboratore co.co.co',assunzione:'2019-05-01',lorda_mese:10210,contrib_ditta_mese:1320,tfr_mese:0,ticket_mese:0,netto_mese:5000,flag:true,note:'Partner - da completare'},
 {id:'d14',sede:'Milano',societa:'AUGE Strategy',cognome:'Buonamici',nome:'Luca',ruolo:'Partner',seniority:'C-Level',attivo:true,tipo:'Collaboratore co.co.co',assunzione:'2022-04-01',lorda_mese:5744,contrib_ditta_mese:468,tfr_mese:0,ticket_mese:0,netto_mese:3720,note:'Strategy+Communication'},
 {id:'d15',sede:'Milano',societa:'AUGE Strategy',cognome:'Angiola',nome:'Beatrice',ruolo:'Strategist',seniority:'Junior',attivo:true,tipo:'Apprendista',assunzione:'2024-10-16',scadenza:'2027-10-01',lorda_mese:1669,contrib_ditta_mese:102,tfr_mese:124,ticket_mese:160,netto_mese:1474},
 {id:'d16',sede:'Milano',societa:'AUGE Strategy',cognome:'Maragna',nome:'Giacomo',ruolo:'Strategist',seniority:'Mid',attivo:true,tipo:'Dipendente',assunzione:'2025-07-09',scadenza:'2028-08-01',lorda_mese:2398,contrib_ditta_mese:226,tfr_mese:177,ticket_mese:160,netto_mese:1819},
@@ -130,141 +129,33 @@ const RAW=[
 {id:'ex18',sede:'Milano',societa:'AUGE Strategy',cognome:'Gazziero',nome:'Chiara',ruolo:'Strategist',attivo:false,tipo:'Dipendente',data_uscita:''},
 {id:'ex19',sede:'Milano',societa:'AUGE Strategy',cognome:'Spreafico',nome:'Riccardo',ruolo:'Strategist',attivo:false,tipo:'Dipendente',data_uscita:''}
 ];
-function ld(){try{const r=localStorage.getItem(SK);if(r){const p=JSON.parse(r);if(p&&p.dips&&p.dips.length>5)return p;}}catch(e){}return{dips:[...RAW],lastUpdate:'Marzo 2026'};}
-function sv(s){try{localStorage.setItem(SK,JSON.stringify(s))}catch(e){}}
-let S=ld(),tab='a',fS='T',fT='T',fSd='T',showEx=false,q='',mod=null,eid=null;
-const f=n=>{if(!n&&n!==0)return'—';return new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);};
-const dt=ds=>{if(!ds)return null;return Math.round((new Date(ds)-new Date())/864e5);};
-const sc=s=>s.includes('Strategy')?'ss':s.includes('Design')?'sd_':s.includes('Communication')?'sc_':'se';
-const bt=(t,ex)=>{if(ex)return'<span class="badge be">Ex</span>';const m={'Dipendente':'bd_','Apprendista':'ba','Collaboratore co.co.co':'bc','Stagista/Borsista':'bs','Freelance / P.IVA':'bf'};const l={'Collaboratore co.co.co':'Co.co.co','Stagista/Borsista':'Stage','Freelance / P.IVA':'P.IVA'};return'<span class="badge '+(m[t]||'bd_')+'">'+(l[t]||t)+'</span>';};
-const ca=d=>{const l=parseFloat(d.lorda_mese)||0,c=parseFloat(d.contrib_ditta_mese)||0,t=parseFloat(d.tfr_mese)||0,tk=parseFloat(d.ticket_mese)||0;let a=0,b=0,cc=0,tf=0,tk2=0;if(d.tipo==='Dipendente'||d.tipo==='Apprendista'){a=l;b=l;cc=c*12;tf=t*12;tk2=tk*12;}else if(d.tipo==='Collaboratore co.co.co'){cc=c*12;}else if(d.tipo==='Stagista/Borsista'){tk2=tk*12;}return{a,b,cc,tf,tk2,tot:l*12+a+b+cc+tf+tk2,mese:(l*12+a+b+cc+tf+tk2)/12};};
-const ral=d=>{const l=parseFloat(d.lorda_mese)||0;const ht=d.tipo==='Dipendente'||d.tipo==='Apprendista';return l*(ht?14:12);};
-const als=()=>{const r=[];S.dips.filter(d=>d.attivo).forEach(d=>{if(d.flag)r.push({t:'i',m:'Dati incompleti: '+d.cognome+' '+d.nome+' ('+(d.societa||'').replace('AUGE ','')+') — '+(d.note||'da completare')});if(!d.scadenza)return;const dy=dt(d.scadenza);if(dy===null)return;if(dy<=0)r.push({t:'r',m:'Contratto scaduto: '+d.cognome+' '+d.nome+' — '+d.scadenza});else if(dy<=30)r.push({t:'r',m:'Scadenza '+dy+'gg: '+d.cognome+' '+d.nome+' — '+d.scadenza});else if(dy<=60)r.push({t:'a',m:'Scadenza '+dy+'gg: '+d.cognome+' '+d.nome+' — '+d.scadenza});});return r;};
-const mt=()=>{const att=S.dips.filter(d=>d.attivo);const ta=att.reduce((s,d)=>s+ca(d).tot,0),tm=att.reduce((s,d)=>s+ca(d).mese,0),tn=att.reduce((s,d)=>s+(parseFloat(d.netto_mese)||0),0);return'<div class="mets"><div class="met"><div class="ml">Risorse attive</div><div class="mv">'+att.length+'</div><div class="ms">tutte le società</div></div><div class="met"><div class="ml">Netto/mese</div><div class="mv">'+f(tn)+'</div><div class="ms">pagato ai dipendenti</div></div><div class="met"><div class="ml">Costo az./mese</div><div class="mv">'+f(tm)+'</div><div class="ms">formula CFO</div></div><div class="met"><div class="ml">Costo annuo</div><div class="mv">'+f(ta)+'</div><div class="ms">13a+14a+TFR+contrib</div></div></div>';};
-const fl=()=>{let l=S.dips.filter(d=>showEx?true:d.attivo);if(fS!=='T')l=l.filter(d=>d.societa===fS);if(fT!=='T')l=l.filter(d=>d.tipo===fT);if(fSd!=='T')l=l.filter(d=>d.sede===fSd);if(q)l=l.filter(d=>(d.cognome+' '+d.nome+' '+(d.ruolo||'')).toLowerCase().includes(q.toLowerCase()));return l;};
-const tabA=()=>{
-  const list=fl();const aLen=list.filter(d=>d.attivo).length,eLen=list.filter(d=>!d.attivo).length;
-  const rows=list.map(d=>{
-    const ex=!d.attivo,c=ex?null:ca(d);const dy=d.scadenza?dt(d.scadenza):null;
-    const scC=dy!==null&&dy<=30?'scr':dy!==null&&dy<=60?'sca':'';
-    const scT=ex?(d.data_uscita?'&#8629; '+d.data_uscita:'&#8629; —'):(d.scadenza?(dy!==null&&dy<=60?d.scadenza+' ('+dy+'gg)':d.scadenza):'—');
-    const ht=d.tipo==='Dipendente'||d.tipo==='Apprendista';
-    return'<tr class="'+(ex?'ex':'')+'"><td>'+d.cognome+' '+d.nome+(d.flag?'<span class="flag">!</span>':'')+'</td>'+
-    '<td><span class="soc '+sc(d.societa||'')+'">'+(d.societa||'').replace('AUGE ','')+'</span></td>'+
-    '<td>'+bt(d.tipo,ex)+'</td><td>'+(d.ruolo||'—')+'</td><td>'+(d.sede||'—')+'</td>'+
-    '<td class="'+scC+'">'+scT+'</td>'+
-    '<td class="r" style="color:var(--tx2)">'+(ex?'—':f(ral(d)))+'</td>'+
-    '<td class="r">'+(ex?'—':f(d.netto_mese))+'</td>'+
-    '<td class="r dv">'+(ex||!c?'—':ht?f(c.a+c.b):'—')+'</td>'+
-    '<td class="r">'+(ex||!c?'—':d.tipo==="Freelance / P.IVA"?'—':f(c.cc))+'</td>'+
-    '<td class="r">'+(ex||!c?'—':ht?f(c.tf):'—')+'</td>'+
-    '<td class="r dv cc" style="font-weight:500">'+(ex||!c?'—':f(c.mese))+'</td>'+
-    '<td class="r cc" style="font-weight:500">'+(ex||!c?'—':f(c.tot))+'</td>'+
-    '<td><button class="btn bts" onclick="oe(''+d.id+'')">&#9998;</button></td></tr>';
-  }).join('');
-  const att=list.filter(d=>d.attivo);
-  const tR=att.reduce((s,d)=>s+ral(d),0),tN=att.reduce((s,d)=>s+(parseFloat(d.netto_mese)||0),0);
-  const tTr=att.reduce((s,d)=>{const c=ca(d);return s+c.a+c.b;},0);
-  const tC=att.reduce((s,d)=>s+ca(d).cc,0),tF=att.reduce((s,d)=>s+ca(d).tf,0);
-  const tM=att.reduce((s,d)=>s+ca(d).mese,0),tA=att.reduce((s,d)=>s+ca(d).tot,0);
-  return'<div class="sh"><span class="st">Anagrafica + costi · '+aLen+' attivi'+(eLen?' · '+eLen+' ex':'')+'</span>'+
-  '<div style="display:flex;gap:6px"><button class="btn bts '+(showEx?'btp':'')+'" onclick="te()">Ex</button>'+
-  '<button class="btn bts btp" onclick="on2()">+ Aggiungi</button></div></div>'+
-  '<input type="search" placeholder="Cerca..." oninput="sq(this.value)" value="'+q+'">'+
-  '<div class="fls">'+['T',...SOCS].map(s=>'<button class="fb '+(fS===s?'on':'')+'" onclick="sf(''+s+'')">'+(s==='T'?'Tutti':s.replace('AUGE ',''))+'</button>').join('')+
-  ' | '+['T',...TIPI].map(t=>'<button class="fb '+(fT===t?'on':'')+'" onclick="st2(''+t+'')">'+(t==='T'?'Tutti':({'Collaboratore co.co.co':'Co.co.co','Stagista/Borsista':'Stage','Freelance / P.IVA':'P.IVA'}[t]||t))+'</button>').join('')+
-  ' | '+['T','Milano','Firenze'].map(s=>'<button class="fb '+(fSd===s?'on':'')+'" onclick="ssd(''+s+'')">'+(s==='T'?'Tutti':s)+'</button>').join('')+'</div>'+
-  '<div class="hint">Colonne evidenziate = costo reale azienda (RAL = lorda × 14 per dip./appr.)</div>'+
-  '<div class="tw"><table><thead><tr><th>Nome</th><th>Soc.</th><th>Tipo</th><th>Ruolo</th><th>Sede</th><th>Scadenza</th>'+
-  '<th class="r">RAL annua</th><th class="r">Netto/mese</th>'+
-  '<th class="r dv">13a+14a</th><th class="r">Contrib.</th><th class="r">TFR</th>'+
-  '<th class="r dv cc">Costo az./m</th><th class="r cc">Costo annuo</th><th></th></tr></thead><tbody>'+rows+
-  '<tr class="tot"><td colspan="6">Totale ('+att.length+')</td>'+
-  '<td class="r">'+f(tR)+'</td><td class="r">'+f(tN)+'</td>'+
-  '<td class="r dv">'+f(tTr)+'</td><td class="r">'+f(tC)+'</td><td class="r">'+f(tF)+'</td>'+
-  '<td class="r dv cc">'+f(tM)+'</td><td class="r cc">'+f(tA)+'</td><td></td></tr></tbody></table></div>';
-};
-const tabS=()=>{
-  const att=S.dips.filter(d=>d.attivo);let h='';
-  SOCS.forEach(soc=>{
-    const list=att.filter(d=>d.societa===soc);if(!list.length)return;
-    const tR=list.reduce((s,d)=>s+ral(d),0),tN=list.reduce((s,d)=>s+(parseFloat(d.netto_mese)||0),0);
-    const tM=list.reduce((s,d)=>s+ca(d).mese,0),tA=list.reduce((s,d)=>s+ca(d).tot,0);
-    const rows=list.map(d=>{const c=ca(d),ht=d.tipo==='Dipendente'||d.tipo==='Apprendista';
-      return'<tr><td>'+d.cognome+' '+d.nome+(d.flag?'<span class="flag">!</span>':'')+'</td>'+
-      '<td>'+bt(d.tipo,false)+'</td><td class="r" style="color:var(--tx2)">'+f(ral(d))+'</td>'+
-      '<td class="r">'+f(d.netto_mese)+'</td>'+
-      '<td class="r dv">'+(ht?f(c.a+c.b):'—')+'</td>'+
-      '<td class="r">'+(d.tipo==='Freelance / P.IVA'?'—':f(c.cc))+'</td>'+
-      '<td class="r">'+(ht?f(c.tf):'—')+'</td>'+
-      '<td class="r dv cc" style="font-weight:500">'+f(c.mese)+'</td>'+
-      '<td class="r cc" style="font-weight:500">'+f(c.tot)+'</td></tr>';
-    }).join('');
-    h+='<div class="gh">'+soc+' <span style="font-weight:400">('+list.length+')</span></div>'+
-    '<div class="tw" style="margin-bottom:1.25rem"><table><thead><tr>'+
-    '<th>Nome</th><th>Tipo</th><th class="r">RAL annua</th><th class="r">Netto/m</th>'+
-    '<th class="r dv">13a+14a</th><th class="r">Contrib.</th><th class="r">TFR</th>'+
-    '<th class="r dv cc">Costo az./m</th><th class="r cc">Costo annuo</th></tr></thead><tbody>'+rows+
-    '<tr class="tot"><td colspan="2">Totale '+soc.replace('AUGE ','')+'</td>'+
-    '<td class="r">'+f(tR)+'</td><td class="r">'+f(tN)+'</td>'+
-    '<td class="r dv">—</td><td class="r">—</td><td class="r">—</td>'+
-    '<td class="r dv cc">'+f(tM)+'</td><td class="r cc">'+f(tA)+'</td></tr></tbody></table></div>';
-  });
-  const g=att.reduce((s,d)=>({r:s.r+ral(d),n:s.n+(parseFloat(d.netto_mese)||0),m:s.m+ca(d).mese,a:s.a+ca(d).tot}),{r:0,n:0,m:0,a:0});
-  h+='<div class="gh">Totale Gruppo</div><div class="tw"><table><thead><tr>'+
-  '<th colspan="2"></th><th class="r">RAL annua</th><th class="r">Netto/m</th>'+
-  '<th class="r dv" colspan="3"></th><th class="r dv cc">Costo az./m</th><th class="r cc">Costo annuo</th></tr></thead><tbody>'+
-  '<tr class="tot"><td colspan="2">Gruppo AUGE</td><td class="r">'+f(g.r)+'</td><td class="r">'+f(g.n)+'</td>'+
-  '<td class="r dv" colspan="3"></td><td class="r dv cc">'+f(g.m)+'</td><td class="r cc">'+f(g.a)+'</td></tr></tbody></table></div>';
-  return'<div class="sh"><span class="st">Costi per società</span></div>'+h;
-};
-const mh=()=>{if(!mod)return'';const d=mod,ie=!!eid;
-  return'<div class="mbg" id="mbg"><div class="mod"><div class="mtit">'+(ie?'Modifica — '+d.cognome+' '+d.nome:'Nuova risorsa')+'</div>'+
-  '<div class="fg"><div class="ff"><label>Cognome *</label><input id="fc" value="'+(d.cognome||'')+'"></div>'+
-  '<div class="ff"><label>Nome *</label><input id="fn" value="'+(d.nome||'')+'"></div>'+
-  '<div class="ff"><label>Società</label><select id="fs">'+SOCS.map(s=>'<option '+(d.societa===s?'selected':'')+'>'+s+'</option>').join('')+'</select></div>'+
-  '<div class="ff"><label>Tipo</label><select id="ft">'+TIPI.map(t=>'<option '+(d.tipo===t?'selected':'')+'>'+t+'</option>').join('')+'</select></div>'+
-  '<div class="ff fw"><label>Ruolo</label><input id="fr" value="'+(d.ruolo||'')+'"></div>'+
-  '<div class="ff"><label>Seniority</label><input id="fse" value="'+(d.seniority||'')+'"></div>'+
-  '<div class="ff"><label>Sede</label><select id="fsd"><option '+(d.sede==='Milano'?'selected':'')+'>Milano</option><option '+(d.sede==='Firenze'?'selected':'')+'>Firenze</option></select></div>'+
-  '<div class="ff"><label>Assunzione</label><input type="date" id="fa" value="'+(d.assunzione||'')+'"></div>'+
-  '<div class="ff"><label>Scadenza</label><input type="date" id="fsc2" value="'+(d.scadenza||'')+'"></div>'+
-  '<div class="ff fw"><label>Note</label><input id="fno" value="'+(d.note||'')+'"></div>'+
-  '<div class="fsec">Retribuzione mensile</div>'+
-  '<div class="ff"><label>Lorda mese (€)</label><input type="number" id="fl" value="'+(d.lorda_mese||'')+'"></div>'+
-  '<div class="ff"><label>Contrib. c/d (€)</label><input type="number" id="fcd" value="'+(d.contrib_ditta_mese||'')+'"></div>'+
-  '<div class="ff"><label>TFR mese (€)</label><input type="number" id="ftf" value="'+(d.tfr_mese||'')+'"></div>'+
-  '<div class="ff"><label>Ticket mese (€)</label><input type="number" id="ftk" value="'+(d.ticket_mese!==undefined?d.ticket_mese:160)+'"></div>'+
-  '<div class="ff"><label>Netto busta (€)</label><input type="number" id="fnt" value="'+(d.netto_mese||'')+'"></div>'+
-  (ie?'<div class="ff fw"><label style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="fat" '+(d.attivo?'checked':'')+'>Risorsa attiva</label></div>':'')+
-  '</div><div class="ma"><button class="btn" onclick="cm()">Annulla</button><button class="btn btp" onclick="sm()">Salva</button></div></div></div>';
-};
-const render=()=>{
-  const al=als();
-  const ah=al.length?'<div class="als">'+al.slice(0,5).map(a=>'<div class="al al-'+a.t+'">&#9679; '+a.m+'</div>').join('')+(al.length>5?'<div class="al al-i">+'+  (al.length-5)+' altri</div>':'')+'</div>':'';
-  const ts=[['a','Anagrafica + costi'],['s','Per società']].map(([t,l])=>'<button class="tab '+(tab===t?'on':'')+'" onclick="setT(''+t+'')">'+l+'</button>').join('');
-  const lbl=document.getElementById('ulbl');if(lbl)lbl.textContent='Aggiornato: '+S.lastUpdate;
-  document.getElementById('root').innerHTML='<div class="tabs">'+ts+'</div>'+mt()+ah+(tab==='a'?tabA():tabS())+mh();
-};
-window.setT=t=>{tab=t;render();};
-window.sf=s=>{fS=s;render();};
-window.st2=t=>{fT=t;render();};
-window.ssd=s=>{fSd=s;render();};
-window.sq=v=>{q=v;render();};
-window.te=()=>{showEx=!showEx;render();};
-window.on2=()=>{mod={societa:'AUGE Strategy',tipo:'Dipendente',sede:'Milano',ticket_mese:160,attivo:true};eid=null;render();};
-window.oe=id=>{const d=S.dips.find(x=>x.id===id);if(!d)return;mod={...d};eid=id;render();};
-window.cm=()=>{mod=null;eid=null;render();};
-window.sm=()=>{
-  const g=id=>document.getElementById(id)?.value||'';
-  const ae=document.getElementById('fat');const wa=eid?S.dips.find(x=>x.id===eid)?.attivo:true;const ia=ae?ae.checked:wa;
-  const d={id:eid||('d-'+Date.now()),cognome:g('fc').trim(),nome:g('fn').trim(),societa:g('fs'),tipo:g('ft'),ruolo:g('fr'),seniority:g('fse'),sede:g('fsd'),assunzione:g('fa'),scadenza:g('fsc2'),note:g('fno'),lorda_mese:parseFloat(g('fl'))||0,contrib_ditta_mese:parseFloat(g('fcd'))||0,tfr_mese:parseFloat(g('ftf'))||0,ticket_mese:parseFloat(g('ftk'))||0,netto_mese:parseFloat(g('fnt'))||0,attivo:ia,data_uscita:'',flag:!ia?false:(!(parseFloat(g('fl'))>0)&&g('ft')!=='Stagista/Borsista'&&g('ft')!=='Freelance / P.IVA')};
-  if(!d.cognome||!d.nome){alert('Nome obbligatorio');return;}
-  if(eid)S.dips=S.dips.map(x=>x.id===eid?d:x);else S.dips.push(d);
-  S.lastUpdate=new Date().toLocaleDateString('it-IT',{month:'long',year:'numeric'});
-  sv(S);mod=null;eid=null;render();
-};
-document.addEventListener('click',e=>{if(e.target.id==='mbg')cm();});
+function ld(){try{var r=localStorage.getItem(SK);if(r){var p=JSON.parse(r);if(p&&p.dips&&p.dips.length>5)return p;}}catch(e){}return{dips:RAW.map(function(d){return Object.assign({},d);}),lastUpdate:'Marzo 2026'};}
+function sv(s){try{localStorage.setItem(SK,JSON.stringify(s));}catch(e){}}
+var S=ld(),tab='a',fS='T',fT='T',fSd='T',showEx=false,q='',mod=null,eid=null;
+function f(n){if(!n&&n!==0)return'—';return new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);}
+function dtt(ds){if(!ds)return null;return Math.round((new Date(ds)-new Date())/864e5);}
+function sc(s){return s.indexOf('Strategy')>=0?'sstr':s.indexOf('Design')>=0?'sdes':s.indexOf('Communication')>=0?'scom':'sexp';}
+function bt(t,ex){if(ex)return'<span class="badge bex">Ex</span>';var m={Dipendente:'bdip',Apprendista:'bapp'};m['Collaboratore co.co.co']='bcol';m['Stagista/Borsista']='bsta';m['Freelance / P.IVA']='bfre';var l={};l['Collaboratore co.co.co']='Co.co.co';l['Stagista/Borsista']='Stage';l['Freelance / P.IVA']='P.IVA';return'<span class="badge '+(m[t]||'bdip')+'">'+(l[t]||t)+'</span>';}
+function ca(d){var l=parseFloat(d.lorda_mese)||0,c=parseFloat(d.contrib_ditta_mese)||0,t=parseFloat(d.tfr_mese)||0,tk=parseFloat(d.ticket_mese)||0,a=0,b=0,cc=0,tf=0,tk2=0;if(d.tipo==='Dipendente'||d.tipo==='Apprendista'){a=l;b=l;cc=c*12;tf=t*12;tk2=tk*12;}else if(d.tipo==='Collaboratore co.co.co'){cc=c*12;}else if(d.tipo==='Stagista/Borsista'){tk2=tk*12;}return{a:a,b:b,cc:cc,tf:tf,tk2:tk2,tot:l*12+a+b+cc+tf+tk2,mese:(l*12+a+b+cc+tf+tk2)/12};}
+function ral(d){var l=parseFloat(d.lorda_mese)||0;return l*((d.tipo==='Dipendente'||d.tipo==='Apprendista')?14:12);}
+function als(){var r=[];S.dips.filter(function(d){return d.attivo;}).forEach(function(d){if(d.flag)r.push({t:'i',m:'Dati incompleti: '+d.cognome+' '+d.nome+' ('+(d.societa||'').replace('AUGE ','')+') — '+(d.note||'da completare')});if(!d.scadenza)return;var dy=dtt(d.scadenza);if(dy===null)return;if(dy<=0)r.push({t:'r',m:'Contratto scaduto: '+d.cognome+' '+d.nome+' — '+d.scadenza});else if(dy<=30)r.push({t:'r',m:'Scadenza '+dy+'gg: '+d.cognome+' '+d.nome+' — '+d.scadenza});else if(dy<=60)r.push({t:'a',m:'Scadenza '+dy+'gg: '+d.cognome+' '+d.nome+' — '+d.scadenza});});return r;}
+function mt(){var att=S.dips.filter(function(d){return d.attivo;});var ta=att.reduce(function(s,d){return s+ca(d).tot;},0),tm=att.reduce(function(s,d){return s+ca(d).mese;},0),tn=att.reduce(function(s,d){return s+(parseFloat(d.netto_mese)||0);},0);return'<div class="mets"><div class="met"><div class="ml">Risorse attive</div><div class="mv">'+att.length+'</div><div class="ms">tutte le società</div></div><div class="met"><div class="ml">Netto/mese</div><div class="mv">'+f(tn)+'</div><div class="ms">pagato ai dipendenti</div></div><div class="met"><div class="ml">Costo az./mese</div><div class="mv">'+f(tm)+'</div><div class="ms">formula CFO</div></div><div class="met"><div class="ml">Costo annuo</div><div class="mv">'+f(ta)+'</div><div class="ms">13a+14a+TFR+contrib</div></div></div>';}
+function fl(){var l=S.dips.filter(function(d){return showEx?true:d.attivo;});if(fS!=='T')l=l.filter(function(d){return d.societa===fS;});if(fT!=='T')l=l.filter(function(d){return d.tipo===fT;});if(fSd!=='T')l=l.filter(function(d){return d.sede===fSd;});if(q)l=l.filter(function(d){return(d.cognome+' '+d.nome+' '+(d.ruolo||'')).toLowerCase().indexOf(q.toLowerCase())>=0;});return l;}
+function tabA(){var list=fl();var aLen=list.filter(function(d){return d.attivo;}).length,eLen=list.filter(function(d){return!d.attivo;}).length;var rows=list.map(function(d){var ex=!d.attivo,c=ex?null:ca(d),dy=d.scadenza?dtt(d.scadenza):null,scC=dy!==null&&dy<=30?'scr':dy!==null&&dy<=60?'sca':'',scT=ex?(d.data_uscita?'&darr; '+d.data_uscita:'&darr; &mdash;'):(d.scadenza?(dy!==null&&dy<=60?d.scadenza+' ('+dy+'gg)':d.scadenza):'&mdash;'),ht=d.tipo==='Dipendente'||d.tipo==='Apprendista';return'<tr class="'+(ex?'ex':'')+'"><td>'+d.cognome+' '+d.nome+(d.flag?'<span class="flag">!</span>':'')+'</td><td><span class="soc '+sc(d.societa||'')+'">'+( d.societa||'').replace('AUGE ','')+'</span></td><td>'+bt(d.tipo,ex)+'</td><td>'+(d.ruolo||'&mdash;')+'</td><td>'+(d.sede||'&mdash;')+'</td><td class="'+scC+'">'+scT+'</td><td class="r" style="color:var(--tx2)">'+(ex?'&mdash;':f(ral(d)))+'</td><td class="r">'+(ex?'&mdash;':f(d.netto_mese))+'</td><td class="r dv">'+(ex||!c?'&mdash;':ht?f(c.a+c.b):'&mdash;')+'</td><td class="r">'+(ex||!c?'&mdash;':d.tipo==='Freelance / P.IVA'?'&mdash;':f(c.cc))+'</td><td class="r">'+(ex||!c?'&mdash;':ht?f(c.tf):'&mdash;')+'</td><td class="r dv cc" style="font-weight:500">'+(ex||!c?'&mdash;':f(c.mese))+'</td><td class="r cc" style="font-weight:500">'+(ex||!c?'&mdash;':f(c.tot))+'</td><td><button class="btn bts" onclick="oe(this.dataset.id)" data-id="'+d.id+'">&#9998;</button></td></tr>';}).join('');var att=list.filter(function(d){return d.attivo;});var tR=att.reduce(function(s,d){return s+ral(d);},0),tN=att.reduce(function(s,d){return s+(parseFloat(d.netto_mese)||0);},0),tTr=att.reduce(function(s,d){var c=ca(d);return s+c.a+c.b;},0),tC=att.reduce(function(s,d){return s+ca(d).cc;},0),tF=att.reduce(function(s,d){return s+ca(d).tf;},0),tM=att.reduce(function(s,d){return s+ca(d).mese;},0),tA=att.reduce(function(s,d){return s+ca(d).tot;},0);return'<div class="sh"><span class="st">Anagrafica + costi &middot; '+aLen+' attivi'+(eLen?' &middot; '+eLen+' ex':'')+'</span><div style="display:flex;gap:6px"><button class="btn bts '+(showEx?'btp':'')+'" onclick="te()">Ex</button><button class="btn bts btp" onclick="on2()">+ Aggiungi</button></div></div><input type="search" placeholder="Cerca..." oninput="sq(this.value)" value="'+q+'"><div class="fls">'+['T'].concat(SOCS).map(function(s){return'<button class="fb '+(fS===s?'on':'')+'" onclick="sf(this.dataset.s)" data-s="'+s+'">'+(s==='T'?'Tutti':s.replace('AUGE ',''))+'</button>';}).join('')+' | '+['T'].concat(TIPI).map(function(t){var lab={T:'Tutti'};lab['Collaboratore co.co.co']='Co.co.co';lab['Stagista/Borsista']='Stage';lab['Freelance / P.IVA']='P.IVA';return'<button class="fb '+(fT===t?'on':'')+'" onclick="st2(this.dataset.t)" data-t="'+t+'">'+(lab[t]||t)+'</button>';}).join('')+' | '+['T','Milano','Firenze'].map(function(s){return'<button class="fb '+(fSd===s?'on':'')+'" onclick="ssd(this.dataset.s)" data-s="'+s+'">'+(s==='T'?'Tutti':s)+'</button>';}).join('')+'</div><div class="hint">RAL = lorda &times; 14 per dip./appr.; Costo annuo include contrib + TFR + ticket</div><div class="tw"><table><thead><tr><th>Nome</th><th>Soc.</th><th>Tipo</th><th>Ruolo</th><th>Sede</th><th>Scadenza</th><th class="r">RAL annua</th><th class="r">Netto/mese</th><th class="r dv">13a+14a</th><th class="r">Contrib.</th><th class="r">TFR</th><th class="r dv cc">Costo az./m</th><th class="r cc">Costo annuo</th><th></th></tr></thead><tbody>'+rows+'<tr class="tot"><td colspan="6">Totale ('+att.length+')</td><td class="r">'+f(tR)+'</td><td class="r">'+f(tN)+'</td><td class="r dv">'+f(tTr)+'</td><td class="r">'+f(tC)+'</td><td class="r">'+f(tF)+'</td><td class="r dv cc">'+f(tM)+'</td><td class="r cc">'+f(tA)+'</td><td></td></tr></tbody></table></div>';}
+function tabS(){var att=S.dips.filter(function(d){return d.attivo;}),h='';SOCS.forEach(function(soc){var list=att.filter(function(d){return d.societa===soc;});if(!list.length)return;var tR=list.reduce(function(s,d){return s+ral(d);},0),tN=list.reduce(function(s,d){return s+(parseFloat(d.netto_mese)||0);},0),tM=list.reduce(function(s,d){return s+ca(d).mese;},0),tA=list.reduce(function(s,d){return s+ca(d).tot;},0);var rows=list.map(function(d){var c=ca(d),ht=d.tipo==='Dipendente'||d.tipo==='Apprendista';return'<tr><td>'+d.cognome+' '+d.nome+(d.flag?'<span class="flag">!</span>':'')+'</td><td>'+bt(d.tipo,false)+'</td><td class="r" style="color:var(--tx2)">'+f(ral(d))+'</td><td class="r">'+f(d.netto_mese)+'</td><td class="r dv">'+(ht?f(c.a+c.b):'&mdash;')+'</td><td class="r">'+(d.tipo==='Freelance / P.IVA'?'&mdash;':f(c.cc))+'</td><td class="r">'+(ht?f(c.tf):'&mdash;')+'</td><td class="r dv cc" style="font-weight:500">'+f(c.mese)+'</td><td class="r cc" style="font-weight:500">'+f(c.tot)+'</td></tr>';}).join('');h+='<div class="gh">'+soc+' <span style="font-weight:400">('+list.length+')</span></div><div class="tw" style="margin-bottom:1.25rem"><table><thead><tr><th>Nome</th><th>Tipo</th><th class="r">RAL annua</th><th class="r">Netto/m</th><th class="r dv">13a+14a</th><th class="r">Contrib.</th><th class="r">TFR</th><th class="r dv cc">Costo az./m</th><th class="r cc">Costo annuo</th></tr></thead><tbody>'+rows+'<tr class="tot"><td colspan="2">Totale '+soc.replace('AUGE ','')+'</td><td class="r">'+f(tR)+'</td><td class="r">'+f(tN)+'</td><td class="r dv">&mdash;</td><td class="r">&mdash;</td><td class="r">&mdash;</td><td class="r dv cc">'+f(tM)+'</td><td class="r cc">'+f(tA)+'</td></tr></tbody></table></div>';});var g=att.reduce(function(s,d){return{r:s.r+ral(d),n:s.n+(parseFloat(d.netto_mese)||0),m:s.m+ca(d).mese,a:s.a+ca(d).tot};},{r:0,n:0,m:0,a:0});h+='<div class="gh">Totale Gruppo</div><div class="tw"><table><thead><tr><th colspan="2"></th><th class="r">RAL annua</th><th class="r">Netto/m</th><th class="r dv" colspan="3"></th><th class="r dv cc">Costo az./m</th><th class="r cc">Costo annuo</th></tr></thead><tbody><tr class="tot"><td colspan="2">Gruppo AUGE</td><td class="r">'+f(g.r)+'</td><td class="r">'+f(g.n)+'</td><td class="r dv" colspan="3"></td><td class="r dv cc">'+f(g.m)+'</td><td class="r cc">'+f(g.a)+'</td></tr></tbody></table></div>';return'<div class="sh"><span class="st">Costi per società</span></div>'+h;}
+function mh(){if(!mod)return'';var d=mod,ie=!!eid;return'<div class="mbg" id="mbg"><div class="mod"><div class="mtit">'+(ie?'Modifica — '+d.cognome+' '+d.nome:'Nuova risorsa')+'</div><div class="fg"><div class="ff"><label>Cognome *</label><input id="fc" value="'+(d.cognome||'')+'"></div><div class="ff"><label>Nome *</label><input id="fn" value="'+(d.nome||'')+'"></div><div class="ff"><label>Società</label><select id="fs">'+SOCS.map(function(s){return'<option '+(d.societa===s?'selected':'')+'>'+s+'</option>';}).join('')+'</select></div><div class="ff"><label>Tipo</label><select id="ft">'+TIPI.map(function(t){return'<option '+(d.tipo===t?'selected':'')+'>'+t+'</option>';}).join('')+'</select></div><div class="ff fw"><label>Ruolo</label><input id="fr" value="'+(d.ruolo||'')+'"></div><div class="ff"><label>Seniority</label><input id="fse" value="'+(d.seniority||'')+'"></div><div class="ff"><label>Sede</label><select id="fsd"><option '+(d.sede==='Milano'?'selected':'')+'>Milano</option><option '+(d.sede==='Firenze'?'selected':'')+'>Firenze</option></select></div><div class="ff"><label>Assunzione</label><input type="date" id="fa" value="'+(d.assunzione||'')+'"></div><div class="ff"><label>Scadenza</label><input type="date" id="fsc2" value="'+(d.scadenza||'')+'"></div><div class="ff fw"><label>Note</label><input id="fno" value="'+(d.note||'')+'"></div><div class="fsec">Retribuzione mensile</div><div class="ff"><label>Lorda mese (€)</label><input type="number" id="fl" value="'+(d.lorda_mese||'')+'"></div><div class="ff"><label>Contrib. c/d (€)</label><input type="number" id="fcd" value="'+(d.contrib_ditta_mese||'')+'"></div><div class="ff"><label>TFR mese (€)</label><input type="number" id="ftf" value="'+(d.tfr_mese||'')+'"></div><div class="ff"><label>Ticket mese (€)</label><input type="number" id="ftk" value="'+(d.ticket_mese!==undefined?d.ticket_mese:160)+'"></div><div class="ff"><label>Netto busta (€)</label><input type="number" id="fnt" value="'+(d.netto_mese||'')+'"></div>'+(ie?'<div class="ff fw"><label style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="fat" '+(d.attivo?'checked':'')+'>Risorsa attiva</label></div>':'')+'</div><div class="ma"><button class="btn" onclick="cm()">Annulla</button><button class="btn btp" onclick="sm()">Salva</button></div></div></div>';}
+function render(){var al=als(),ah=al.length?'<div class="als">'+al.slice(0,5).map(function(a){return'<div class="al al-'+a.t+'">&#9679; '+a.m+'</div>';}).join('')+(al.length>5?'<div class="al al-i">+'+(al.length-5)+' altri</div>':'')+'</div>':'',ts=[['a','Anagrafica + costi'],['s','Per società']].map(function(p){return'<button class="tab '+(tab===p[0]?'on':'')+'" onclick="setT(''+p[0]+'')">'+p[1]+'</button>';}).join(''),lbl=document.getElementById('ulbl');if(lbl)lbl.textContent='Aggiornato: '+S.lastUpdate;document.getElementById('root').innerHTML='<div class="tabs">'+ts+'</div>'+mt()+ah+(tab==='a'?tabA():tabS())+mh();}
+window.setT=function(t){tab=t;render();};
+window.sf=function(s){fS=s;render();};
+window.st2=function(t){fT=t;render();};
+window.ssd=function(s){fSd=s;render();};
+window.sq=function(v){q=v;render();};
+window.te=function(){showEx=!showEx;render();};
+window.on2=function(){mod={societa:'AUGE Strategy',tipo:'Dipendente',sede:'Milano',ticket_mese:160,attivo:true};eid=null;render();};
+window.oe=function(id){var d=S.dips.filter(function(x){return x.id===id;})[0];if(!d)return;mod=Object.assign({},d);eid=id;render();};
+window.cm=function(){mod=null;eid=null;render();};
+window.sm=function(){var g=function(id){var el=document.getElementById(id);return el?el.value:'';};var ae=document.getElementById('fat'),wa=eid?S.dips.filter(function(x){return x.id===eid;})[0].attivo:true,ia=ae?ae.checked:wa,d={id:eid||('d-'+Date.now()),cognome:g('fc').trim(),nome:g('fn').trim(),societa:g('fs'),tipo:g('ft'),ruolo:g('fr'),seniority:g('fse'),sede:g('fsd'),assunzione:g('fa'),scadenza:g('fsc2'),note:g('fno'),lorda_mese:parseFloat(g('fl'))||0,contrib_ditta_mese:parseFloat(g('fcd'))||0,tfr_mese:parseFloat(g('ftf'))||0,ticket_mese:parseFloat(g('ftk'))||0,netto_mese:parseFloat(g('fnt'))||0,attivo:ia,data_uscita:'',flag:!ia?false:!(parseFloat(g('fl'))>0)&&g('ft')!=='Stagista/Borsista'&&g('ft')!=='Freelance / P.IVA'};if(!d.cognome||!d.nome){alert('Nome obbligatorio');return;}if(eid)S.dips=S.dips.map(function(x){return x.id===eid?d:x;});else S.dips.push(d);S.lastUpdate=new Date().toLocaleDateString('it-IT',{month:'long',year:'numeric'});sv(S);mod=null;eid=null;render();};
+document.addEventListener('click',function(e){if(e.target.id==='mbg')cm();});
 render();
 </script>
 </body>
